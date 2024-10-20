@@ -1,0 +1,76 @@
+﻿/* App.css */
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.employee-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+    .employee-table th, .employee-table td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .employee-table th {
+        background-color: #f2f2f2;
+    }
+
+    .employee-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .employee-table td input {
+        width: 100%;
+        padding: 4px;
+        box-sizing: border-box;
+    }
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .employee-table, .employee-table thead, .employee-table tbody, .employee-table th, .employee-table td, .employee-table tr {
+        display: block;
+    }
+
+        .employee-table thead tr {
+            display: none;
+        }
+
+        .employee-table td {
+            position: relative;
+            padding-left: 50%;
+            text-align: right;
+            border: 1px solid #ccc;
+            white-space: nowrap;
+        }
+
+            .employee-table td::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 45%;
+                padding-left: 10px;
+                font-weight: bold;
+                text-align: left;
+                white-space: nowrap;
+            }
+
+            .employee-table td:nth-of-type(1)::before {
+                content: "Name";
+            }
+
+            .employee-table td:nth-of-type(2)::before {
+                content: "Value";
+            }
+
+            .employee-table td:nth-of-type(3)::before {
+                content: "Actions";
+            }
+}
