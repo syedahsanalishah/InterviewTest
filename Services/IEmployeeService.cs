@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace InterviewTest.Services
+public interface IEmployeeService
 {
-    public interface IEmployeeService
-    {
-        Task<IEnumerable<Employee>> GetEmployeesAsync();
-        Task AddEmployeeAsync(Employee employee);
-        Task UpdateEmployeeAsync(string name, Employee employee);
-        Task DeleteEmployeeAsync(string name);
-        Task IncrementValuesAsync(string name);
-        Task<(int TotalSum, string Message)> GetSumAsync();
-    }
+    Task<IEnumerable<Employee>> GetEmployeesAsync();
+    Task AddEmployeeAsync(Employee employee);
+    Task<bool> UpdateEmployeeAsync(string name, Employee employee); // Keep this
+    Task DeleteEmployeeAsync(string name);
+    Task IncrementValuesAsync(string name);
+    Task<(int TotalSum, string Message)> GetSumAsync();
+    Task<Employee> FindByNameAsync(string name); // Ensure this is defined
 }
